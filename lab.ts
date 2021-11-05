@@ -6,11 +6,11 @@ console.clear()
 // example outputs:
 // console.log(numberString) => '7'
 // console.log(realNumber) => 32
-
 let numberString: string = '42'
 let realNumber: number = 7
 
 // todo: swap the values in the varaibles and log the results
+
 
 /* --- Problem #2 - function and mixed array type --- */
 // 1. create an array type that is a mix of strings of numbers and actual numbers
@@ -20,8 +20,14 @@ let realNumber: number = 7
 // ex: stringToNum([10, '34', 3, '17']) => [10, 34, 3, 17]
 
 // Todo write the mixed array of strings and numbers
+let mixedArray: Array<number | string> = [10, '34', 3, '17']
 
 // Todo write a function to convert the mixed array to an array of only numbers
+const arrowFunc = (s: any): number => {
+    return s
+}
+arrowFunc(mixedArray)
+
 
 /* --- Problem #3 - Tuple Type --- */
 // 1. Create a tuple type named 'cityCoordinate' that has three elements: city name, latitute, and longitude
@@ -29,13 +35,23 @@ let realNumber: number = 7
 // uncomment the function to test your solution
 
 // Todo - create the type definition, and some cities
+interface cityCoordinate{ 
+    name: string 
+    latitude: number
+    longitude: number
+ }
+ let seattle: cityCoordinate = {
+     name: "seattle",
+     latitude: 98,
+     longitude: 77
+ }
 
 // 🚨 uncomment this function to test your solution 🚨
-// function printCityData(city: cityCoordinate): void {
-//     console.log(`${city[0]} is at Lat: ${city[1]}, Long: ${city[2]}`);
-// }
+function printCityData(city: cityCoordinate): void {
+    console.log(`${city[0]} is at Lat: ${city[1]}, Long: ${city[2]}`);
+}
 
-// printCityData(seattle);
+printCityData(seattle);
 
 /* --- Problem #4 - Interfaces and Union Types --- */
 // Given the following interfaces and type declarations...
